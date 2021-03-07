@@ -3,16 +3,18 @@ package com.olucasmoro.movieapp.feature_album.presentation.movielist
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.R
 import com.olucasmoro.movieapp.feature_album.data.model.Movie
+import com.olucasmoro.movieapp.feature_album.presentation.Listeners
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_container_movie.view.*
 
 class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun bind(movie: Movie) {
+    fun bind(movie: Movie, findNavController: NavController) {
 
         itemView.tv_name_our_title.text = movie.original_title
         itemView.rating.text = movie.vote_average
@@ -23,7 +25,7 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             .into(itemView.img_liview)
 
         itemView.setOnClickListener {
-
+            findNavController.navigate(MovieListFragmentDirections.actionNavigationMovieListToMovieDetailFragment(movieId = movie.id))
         }
     }
 

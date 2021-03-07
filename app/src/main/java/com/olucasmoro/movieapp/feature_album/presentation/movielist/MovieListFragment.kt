@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.databinding.FragmentMovieListBinding
@@ -137,7 +138,7 @@ class MovieListFragment : Fragment(), View.OnClickListener {
     }
 
     private fun defineAdapter(movie: List<Movie>, movieType: String) {
-        movieListAdapter = MovieListAdapter(movie)
+        movieListAdapter = MovieListAdapter(movie, findNavController())
         updateAdapter(movieType)
         movieListAdapter.notifyDataSetChanged()
     }
