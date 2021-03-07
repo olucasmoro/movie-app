@@ -1,6 +1,11 @@
-package com.olucasmoro.movieapp.feature_album.presentation
+package com.olucasmoro.movieapp.feature_album.presentation.utils
 
 class Constants private constructor() {
+
+    object MESSAGE {
+        const val FAILURE = "Search failed "
+        const val FAILURE_CONNECTION = "Failure to connection"
+    }
 
     object MOVIETYPE {
         const val NOW_PLAYING = "now_playing"
@@ -11,6 +16,7 @@ class Constants private constructor() {
 
     // Credentials
     object API {
+        const val PAGE = "1"
         const val API_KEY = "b64a6b336c3652edc3c1c3459e02c9e6"
         const val BASE_URL = "https://api.themoviedb.org"
         const val BASE_URL_IMAGE = "https://image.tmdb.org/t/p/w342/"

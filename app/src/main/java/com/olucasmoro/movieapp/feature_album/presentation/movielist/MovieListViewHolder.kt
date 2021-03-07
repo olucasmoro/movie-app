@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.R
-import com.olucasmoro.movieapp.feature_album.data.remote.model.Movie
-import com.olucasmoro.movieapp.feature_album.presentation.Constants
+import com.olucasmoro.movieapp.feature_album.data.model.Movie
+import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_container_movie.view.*
 
@@ -24,17 +24,14 @@ class MovieListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         itemView.setOnClickListener {
 
-        } // Chamar o listener
+        }
     }
 
     companion object {
-        //inflate
-        fun create(parent: ViewGroup): MovieListViewHolder {
 
-            // DataBindingUtil.inflate(LayoutInflater.from(parent?.context), R.layout.item_container_movie)
+        fun inflate(parent: ViewGroup): MovieListViewHolder {
 
             //DataBindingUtil.inflate(LayoutInflater.from(parent?.context), R.layout.item_container_movie, parent, false)
-
             val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_container_movie, parent, false)
             return MovieListViewHolder(view)

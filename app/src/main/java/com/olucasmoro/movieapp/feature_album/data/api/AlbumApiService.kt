@@ -1,6 +1,6 @@
-package com.olucasmoro.movieapp.feature_album.data.remote.api
+package com.olucasmoro.movieapp.feature_album.data.api
 
-import com.olucasmoro.movieapp.feature_album.data.remote.model.MovieResponse
+import com.olucasmoro.movieapp.feature_album.data.model.MovieResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

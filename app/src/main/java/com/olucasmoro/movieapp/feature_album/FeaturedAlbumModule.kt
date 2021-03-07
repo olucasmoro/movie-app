@@ -1,12 +1,12 @@
 package com.olucasmoro.movieapp.feature_album
 
-import com.olucasmoro.movieapp.feature_album.data.remote.AlbumRemoteData
-import com.olucasmoro.movieapp.feature_album.data.remote.AlbumRemoteDataImpl
-import com.olucasmoro.movieapp.feature_album.data.remote.AlbumRepositoryImpl
-import com.olucasmoro.movieapp.feature_album.data.remote.api.AlbumApiService
+import com.olucasmoro.movieapp.feature_album.data.Source.AlbumRemoteData
+import com.olucasmoro.movieapp.feature_album.data.Source.AlbumRemoteDataImpl
+import com.olucasmoro.movieapp.feature_album.data.AlbumRepositoryImpl
+import com.olucasmoro.movieapp.feature_album.data.api.AlbumApiService
 import com.olucasmoro.movieapp.feature_album.domain.repository.AlbumRepository
 import com.olucasmoro.movieapp.feature_album.domain.usecase.AlbumUseCase
-import com.olucasmoro.movieapp.feature_album.presentation.Constants.API.BASE_URL
+import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants.API.BASE_URL
 import com.olucasmoro.movieapp.feature_album.presentation.movielist.MovieListViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
