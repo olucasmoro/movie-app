@@ -1,8 +1,8 @@
-package com.olucasmoro.movieapp.featured_album.presentation.movielist
+package com.olucasmoro.movieapp.feature_album.presentation.movielist
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.olucasmoro.movieapp.featured_album.data.remote.model.Movie
+import com.olucasmoro.movieapp.feature_album.data.remote.model.Movie
 
 class MovieListAdapter(
     private val listMovie: List<Movie>,

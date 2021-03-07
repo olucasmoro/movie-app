@@ -1,12 +1,12 @@
-package com.olucasmoro.movieapp.featured_album.presentation.movielist
+package com.olucasmoro.movieapp.feature_album.presentation.movielist
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.R
-import com.olucasmoro.movieapp.featured_album.data.remote.model.Movie
-import com.olucasmoro.movieapp.featured_album.presentation.Constants
+import com.olucasmoro.movieapp.feature_album.data.remote.model.Movie
+import com.olucasmoro.movieapp.feature_album.presentation.Constants
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_container_movie.view.*
 

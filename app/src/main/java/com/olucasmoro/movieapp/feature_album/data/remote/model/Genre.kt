@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.featured_album.data.remote.model
+package com.olucasmoro.movieapp.feature_album.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

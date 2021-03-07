@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.featured_album.domain.entity
+package com.olucasmoro.movieapp.feature_album.domain.entity
 
 data class Movie(
     var id: String,

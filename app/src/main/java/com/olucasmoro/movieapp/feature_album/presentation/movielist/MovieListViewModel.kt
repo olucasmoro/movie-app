@@ -1,11 +1,11 @@
-package com.olucasmoro.movieapp.featured_album.presentation.movielist
+package com.olucasmoro.movieapp.feature_album.presentation.movielist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.olucasmoro.movieapp.featured_album.data.remote.model.Movie
-import com.olucasmoro.movieapp.featured_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.featured_album.domain.usecase.AlbumUseCase
-import com.olucasmoro.movieapp.featured_album.presentation.Constants
+import com.olucasmoro.movieapp.feature_album.data.remote.model.Movie
+import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
+import com.olucasmoro.movieapp.feature_album.domain.usecase.AlbumUseCase
+import com.olucasmoro.movieapp.feature_album.presentation.Constants
 
 class MovieListViewModel(private val useCase: AlbumUseCase) :
     ViewModel() {

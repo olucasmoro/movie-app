@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_movie_list"
-        android:name="com.olucasmoro.movieapp.featured_album.presentation.movielist.MovieListFragment"
+        android:name="com.olucasmoro.movieapp.feature_album.presentation.movielist.MovieListFragment"
         android:label="Movies"
         tools:layout="@layout/fragment_movie_list"/>
 

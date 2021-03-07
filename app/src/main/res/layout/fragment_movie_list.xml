@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingStart="@dimen/_8sdp"
-    tools:context=".featured_album.presentation.movielist.MovieListFragment"
+    tools:context=".feature_album.presentation.movielist.MovieListFragment"
     tools:ignore="RtlSymmetry">
 
     <ScrollView

@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.featured_album.presentation
+package com.olucasmoro.movieapp.feature_album.presentation
 
 class Constants private constructor() {
 

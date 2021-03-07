@@ -1,8 +1,8 @@
-package com.olucasmoro.movieapp.featured_album.data.remote
+package com.olucasmoro.movieapp.feature_album.data.remote
 
 import androidx.lifecycle.liveData
-import com.olucasmoro.movieapp.featured_album.data.remote.api.AlbumApiService
-import com.olucasmoro.movieapp.featured_album.domain.entity.CallResults
+import com.olucasmoro.movieapp.feature_album.data.remote.api.AlbumApiService
+import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
 import java.net.ConnectException
 
 class AlbumRemoteDataImpl(private val apiService: AlbumApiService) : AlbumRemoteData {

@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.featured_album.presentation.movielist
+package com.olucasmoro.movieapp.feature_album.presentation.movielist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.databinding.FragmentMovieListBinding
-import com.olucasmoro.movieapp.featured_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.featured_album.presentation.Constants
+import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
+import com.olucasmoro.movieapp.feature_album.presentation.Constants
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieListFragment : Fragment(), View.OnClickListener {
