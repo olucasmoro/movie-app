@@ -1,16 +1,105 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MovieApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.AppMovieKotlin" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:textViewStyle">@style/MonseratTextViewStyle</item>
+        <item name="android:textColorPrimary">@drawable/textview_selector</item>
+        <item name="android:textColorSecondary">@drawable/textview_secundary_selector</item>
+
+        <item name="android:dialogTheme">@style/MyDialogStyle</item>
+        <item name="alertDialogTheme">@style/MyDialogStyle</item>
+    </style>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
+
+    <style name="NavigationDrawerFont">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/White_100</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MonseratTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:textColor">@color/White_100</item>
+    </style>
+
+    <style name="MyDialogStyle" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:background">@color/windowBackground</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:textViewStyle">@style/DialogTextViewStyle</item>
+        <item name="windowFixedWidthMajor">90%</item>
+        <item name="windowFixedWidthMinor">90%</item>
+        <item name="textColorAlertDialogListItem">@color/White_100</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="DialogTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/White_100</item>
+    </style>
+
+    <style name="btnTextMore">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:text">@string/more</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="buttonTextStyle">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/grey</item>
+
+    </style>
+
+    <style name="buttonTextBoldStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:paddingStart">@dimen/_3sdp</item>
+    </style>
+
+    <style name="buttonStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/colorSecondary</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="android:numStars">5</item>
+        <item name="colorControlNormal">@color/duskYellow</item>
+        <item name="colorControlActivated">@color/duskYellow</item>
+    </style>
+
+    <style name="ContextText">
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:drawablePadding">@dimen/_4sdp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="titleText">
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
     </style>
 </resources>

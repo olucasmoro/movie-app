@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#032541</color>
+    <color name="colorPrimaryDark">#031D33</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorSecondary">#01b4e4</color>
+    <color name="colorSecondary2">#f4c010</color>
+    <color name="colorTertiary">#90cea1</color>
+    <color name="colorBackground">#042f45</color>
+
+    <color name="colorTransparent">#00000000</color>
+
+    <color name="colorTitleText">#01b4e4</color>
+    <color name="colorSubtitleText">#90cea1</color>
+    <color name="colorFacebook">#3b5998</color>
+    <color name="colorIcon">#666666</color>
+
+    <color name="grey">#8e8e8e</color>
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+    <color name="duskYellow" >#ffe046</color>
+    <color name="lightYellow" >#f4c010</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="lightcolor">#1e2634</color>
+
+    <color name="windowBackground">#031F37</color>
+
+    <color name="Black_20">#33000000</color>
+    <color name="Black_40">#66000000</color>
+    <color name="Black_60">#99000000</color>
+
+    <color name="material_color_yellow_700">#fbc02d</color>
+
+    <color name="White_100">#ffffff</color>
+    <color name="White_95">#F2FFFFFF</color>
+    <color name="White_90">#e6ffffff</color>
+    <color name="White_85">#D9FFFFFF</color>
+    <color name="White_80">#CCFFFFFF</color>
+    <color name="White_75">#BFFFFFFF</color>
+    <color name="White_70">#b3ffffff</color>
+    <color name="White_65">#A6FFFFFF</color>
+    <color name="White_60">#99ffffff</color>
+    <color name="White_55">#8CFFFFFF</color>
+    <color name="White_50">#80FFFFFF</color>
+    <color name="White_45">#73FFFFFF</color>
+    <color name="white_43">#E8E6E6</color>
+    <color name="White_40">#66FFFFFF</color>
+    <color name="White_35">#59FFFFFF</color>
+    <color name="White_30">#4DFFFFFF</color>
+    <color name="White_25">#40FFFFFF</color>
+    <color name="White_20">#33FFFFFF</color>
+    <color name="White_15">#26ffffff</color>
+    <color name="White_10">#1AFFFFFF</color>
+    <color name="White_5">#0DFFFFFF</color>
+    <color name="White_0">#00FFFFFF</color>
 </resources>
