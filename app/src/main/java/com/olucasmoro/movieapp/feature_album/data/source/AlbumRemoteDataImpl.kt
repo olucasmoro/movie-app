@@ -37,4 +37,19 @@ class AlbumRemoteDataImpl(private val apiService: AlbumApiService) : AlbumRemote
             emit(CallResults.Error(exception = e))
         }
     }
+
+    override fun searchMovie(str: String, apiKey: String) = liveData {
+        try {
+            val response = apiService.getSearchMovie(apiKey, str)
+            if (response.isSuccessful) {
+                emit(CallResults.Success(data = response.body()?.results!!.toList()))
+            } else {
+                emit(CallResults.Error(exception = Exception(Constants.MESSAGE.FAILURE)))
+            }
+        } catch (e: ConnectException) {
+            emit(CallResults.Error(exception = Exception(Constants.MESSAGE.FAILURE_CONNECTION)))
+        } catch (e: Exception) {
+            emit(CallResults.Error(exception = e))
+        }
+    }
 }

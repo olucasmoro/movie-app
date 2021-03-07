@@ -39,4 +39,19 @@
             app:argType="string" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.olucasmoro.movieapp.feature_album.presentation.moviesearch.MovieSearchFragment"
+        android:label="Search Movie"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_movieSearchFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" >
+            <argument
+                android:name="movieId"
+                android:defaultValue=""
+                app:argType="string" />
+        </action>
+    </fragment>
+
 </navigation>

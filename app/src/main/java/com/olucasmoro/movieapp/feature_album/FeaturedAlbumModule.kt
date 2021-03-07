@@ -9,6 +9,7 @@ import com.olucasmoro.movieapp.feature_album.domain.usecase.AlbumUseCase
 import com.olucasmoro.movieapp.feature_album.presentation.moviedetail.MovieDetailViewModel
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants.API.BASE_URL
 import com.olucasmoro.movieapp.feature_album.presentation.movielist.MovieListViewModel
+import com.olucasmoro.movieapp.feature_album.presentation.moviesearch.MovieSearchViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -49,6 +50,7 @@ val repositoryModule = module {
 val viewModelModule = module {
     viewModel<MovieListViewModel> { MovieListViewModel(get()) }
     viewModel<MovieDetailViewModel> { MovieDetailViewModel(get()) }
+    viewModel<MovieSearchViewModel> { MovieSearchViewModel(get()) }
 }
 
 val albumModules = listOf(
