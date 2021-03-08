@@ -10,6 +10,7 @@ import com.olucasmoro.movieapp.feature_album.presentation.moviedetail.MovieDetai
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants.API.BASE_URL
 import com.olucasmoro.movieapp.feature_album.presentation.movielist.MovieListViewModel
 import com.olucasmoro.movieapp.feature_album.presentation.moviesearch.MovieSearchViewModel
+import com.olucasmoro.movieapp.feature_watchlist.data.api.WatchlistApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -33,6 +34,7 @@ val retrofitModule = module {
             .build()
     }
     single<AlbumApiService> { get<Retrofit>().create(AlbumApiService::class.java) }
+    single<WatchlistApiService> { get<Retrofit>().create(WatchlistApiService::class.java) }
 }
 
 val useCaseModule = module {

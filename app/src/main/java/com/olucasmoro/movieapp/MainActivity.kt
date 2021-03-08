@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_movie_list,
                 R.id.navigation_search,
-//                R.id.navigation_watchlist,
+                R.id.navigation_watchlist,
 //                R.id.navigation_most
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 }

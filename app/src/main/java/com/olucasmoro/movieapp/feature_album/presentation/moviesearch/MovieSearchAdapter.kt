@@ -11,7 +11,7 @@ class MovieSearchAdapter(
 ) : RecyclerView.Adapter<MovieSearchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieSearchViewHolder {
-        return MovieSearchViewHolder.create(parent)
+        return MovieSearchViewHolder.inflate(parent)
     }
 
     override fun onBindViewHolder(holder: MovieSearchViewHolder, position: Int) {

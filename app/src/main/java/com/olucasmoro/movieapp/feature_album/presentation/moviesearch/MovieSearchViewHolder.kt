@@ -9,7 +9,7 @@ import com.olucasmoro.movieapp.R
 import com.olucasmoro.movieapp.feature_album.data.model.Search
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_movie_search.view.*
+import kotlinx.android.synthetic.main.item_search.view.*
 
 class MovieSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -17,7 +17,7 @@ class MovieSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
         itemView.textTitle.text = movie.original_title
 
-        val target: String = movie.poster_path //Poster
+        val target: String = movie.poster_path
 
         itemView.textReleaseDate.text = movie.release_date
         itemView.textEvaluation.text = movie.vote_average
@@ -34,9 +34,9 @@ class MovieSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
     }
 
     companion object {
-        fun create(parent: ViewGroup): MovieSearchViewHolder {
+        fun inflate(parent: ViewGroup): MovieSearchViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_movie_search, parent, false)
+                .inflate(R.layout.item_search, parent, false)
             return MovieSearchViewHolder(view)
         }
     }

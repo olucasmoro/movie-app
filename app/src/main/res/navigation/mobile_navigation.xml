@@ -43,9 +43,23 @@
         android:id="@+id/navigation_search"
         android:name="com.olucasmoro.movieapp.feature_album.presentation.moviesearch.MovieSearchFragment"
         android:label="Search Movie"
-        tools:layout="@layout/fragment_search">
+        tools:layout="@layout/fragment_movie_search">
         <action
             android:id="@+id/action_movieSearchFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment">
+            <argument
+                android:name="movieId"
+                android:defaultValue=""
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_watchlist"
+        android:name="com.olucasmoro.movieapp.feature_watchlist.presentation.WatchListFragment"
+        android:label="My List"
+        tools:layout="@layout/fragment_watchlist">
+        <action
+            android:id="@+id/action_watchListFragment_to_movieDetailFragment"
             app:destination="@id/movieDetailFragment" >
             <argument
                 android:name="movieId"

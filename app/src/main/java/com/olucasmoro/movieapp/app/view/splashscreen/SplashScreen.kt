@@ -1,8 +1,9 @@
-package com.olucasmoro.movieapp.app.view
+package com.olucasmoro.movieapp.app.view.splashscreen
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.olucasmoro.movieapp.R
 import kotlin.concurrent.schedule
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
@@ -22,7 +23,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 //                startActivity(Intent(requireContext(), MainActivity::class.java))
 //                onDestroy()
 //            } else {
-//            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment())
+            findNavController().navigate(SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment())
 //            }
         }
     }

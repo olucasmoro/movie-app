@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.olucasmoro.movieapp.databinding.FragmentSearchBinding
+import com.olucasmoro.movieapp.databinding.FragmentMovieSearchBinding
 import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
@@ -21,7 +21,7 @@ class MovieSearchFragment : Fragment() {
     private val viewModel: MovieSearchViewModel by viewModel()
 
     private val binding by lazy {
-        FragmentSearchBinding.inflate(layoutInflater)
+        FragmentMovieSearchBinding.inflate(layoutInflater)
     }
 
     private lateinit var searchAdapter: MovieSearchAdapter
@@ -62,7 +62,7 @@ class MovieSearchFragment : Fragment() {
                         } ?: false
                     }
                     is CallResults.Error -> {
-                          Auxiliary.toastDisplay(
+                        Auxiliary.toastDisplay(
                             requireContext(),
                             Constants.MESSAGE.FAILURE_CONNECTION
                         )

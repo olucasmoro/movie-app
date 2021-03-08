@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".feature.onboarding.OnBoardingFragment">
+    android:padding="20dp">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider"
