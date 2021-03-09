@@ -11,4 +11,5 @@ class WatchListViewModel(private val useCase: WatchlistUseCase) : ViewModel() {
 
     fun watchlistMovies(userId: Int, sessionId: String): LiveData<CallResults<List<Movie>?>> =
         useCase.getWatchlist(userId, sessionId, Constants.API.API_KEY)
+
 }

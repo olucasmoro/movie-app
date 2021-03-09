@@ -10,6 +10,7 @@ import com.olucasmoro.movieapp.feature_album.presentation.moviedetail.MovieDetai
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants.API.BASE_URL
 import com.olucasmoro.movieapp.feature_album.presentation.movielist.MovieListViewModel
 import com.olucasmoro.movieapp.feature_album.presentation.moviesearch.MovieSearchViewModel
+import com.olucasmoro.movieapp.feature_user.data.api.UserApiService
 import com.olucasmoro.movieapp.feature_watchlist.data.api.WatchlistApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -35,6 +36,7 @@ val retrofitModule = module {
     }
     single<AlbumApiService> { get<Retrofit>().create(AlbumApiService::class.java) }
     single<WatchlistApiService> { get<Retrofit>().create(WatchlistApiService::class.java) }
+    single<UserApiService> { get<Retrofit>().create(UserApiService::class.java) }
 }
 
 val useCaseModule = module {

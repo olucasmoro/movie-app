@@ -10,9 +10,12 @@ import com.olucasmoro.movieapp.databinding.FragmentWatchlistBinding
 import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WatchListFragment : Fragment() {
+
+    private lateinit var mSharedPreferences: SecurityPreferences
 
     private val viewModel: WatchListViewModel by viewModel()
     private val binding by lazy {
@@ -27,8 +30,10 @@ class WatchListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        mSharedPreferences = SecurityPreferences(requireContext())
+
         val userId = 10147690
-        val sessionId = "087a37f6e78d5054652c9e64fed850c0ccf02713"
+        val sessionId = mSharedPreferences.get(Constants.AUTHENTICATION.SESSION_ID)
 
         getWatchlist(userId, sessionId)
 

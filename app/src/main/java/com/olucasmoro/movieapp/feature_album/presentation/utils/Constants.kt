@@ -43,6 +43,7 @@ class Constants private constructor() {
         const val EMAIL = "email"
         const val PROVIDER = "provider"
         const val IS_LOGGED = "is_logged"
+        const val TOKEN = "token"
     }
 
     object MENU {
@@ -55,7 +56,7 @@ class Constants private constructor() {
     }
 
     object TIMER {
-        const val SPLASH_TIMER: Long = 5000L
+        const val SPLASH_TIMER: Long = 3500L
     }
 
     object TYPES {

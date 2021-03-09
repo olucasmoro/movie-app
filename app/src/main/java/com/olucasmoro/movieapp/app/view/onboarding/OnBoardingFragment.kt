@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.olucasmoro.movieapp.MainActivity
 import com.olucasmoro.movieapp.R
@@ -95,9 +96,9 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), View.OnClick
 
     // Skip the slides
     private fun skipSlides() {
-        //findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToUserLoginFragment())
-        val intent = Intent(context, MainActivity::class.java)
-        startActivity(intent)
+        findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToLoginFragment())
+//        val intent = Intent(context, MainActivity::class.java)
+//        startActivity(intent)
     }
 
     private var changeListener: ViewPager.OnPageChangeListener = object :
