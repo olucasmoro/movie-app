@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/_25sdp"
     android:background="@color/white"
-    tools:context=".featured_useraccount.presentation.signup.UserSignUpFragment">
+    tools:context=".feature_user.presentation.signup.SignUpFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,6 +39,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
 
@@ -54,6 +55,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -68,6 +70,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:textColor="@color/black"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
 

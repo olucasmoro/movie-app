@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
     android:background="@color/white"
+    android:gravity="center_vertical"
     android:orientation="vertical"
     android:padding="@dimen/_25sdp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context=".feature.login.UserLoginFragment">
+    tools:context=".feature_user.presentation.login.LoginFragment">
 
     <ImageView
         android:id="@+id/image_loginImage"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/tmdb_logo2"
-        android:contentDescription="@string/logo_image" />
+        android:contentDescription="@string/logo_image"
+        android:src="@drawable/tmdb_logo2" />
 
     <TextView
         android:id="@+id/text_loginDesc"
@@ -36,14 +36,15 @@
 
         <!--Usar o TextInputLayout pois vamos usar entrada de texto único -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/login_username"
+            android:id="@+id/login_email"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/username">
+            android:hint="@string/email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,6 +60,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -114,8 +116,6 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </LinearLayout>

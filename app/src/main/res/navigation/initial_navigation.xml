@@ -18,5 +18,35 @@
         android:id="@+id/onBoardingFragment"
         android:name="com.olucasmoro.movieapp.app.view.onboarding.OnBoardingFragment"
         android:label="OnBoardingFragment"
-        tools:layout="@layout/fragment_on_boarding"/>
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.olucasmoro.movieapp.feature_user.presentation.login.LoginFragment"
+        android:label="fragment_user_login"
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        tools:layout="@layout/fragment_user_sign_up"
+        android:name="com.olucasmoro.movieapp.feature_user.presentation.signup.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_checkValidationFragment"
+            app:destination="@id/checkValidationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkValidationFragment"
+        android:name="com.olucasmoro.movieapp.feature_user.presentation.CheckValidationFragment"
+        android:label="fragment_check_validation"
+        tools:layout="@layout/fragment_check_validation" />
 </navigation>

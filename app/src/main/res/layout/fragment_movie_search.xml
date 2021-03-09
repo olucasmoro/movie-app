@@ -36,6 +36,7 @@
             app:srcCompat="@drawable/if_67_111124" />
 
         <ImageView
+            android:background="@color/transparent"
             android:id="@+id/clear_search"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
