@@ -1,5 +1,6 @@
 package com.olucasmoro.movieapp.feature_user.data.api
 
+import com.olucasmoro.movieapp.feature_user.data.local.User
 import com.olucasmoro.movieapp.feature_user.data.model.SessionResponse
 import com.olucasmoro.movieapp.feature_user.data.model.TokenResponse
 import retrofit2.Response

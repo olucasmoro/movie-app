@@ -11,6 +11,7 @@ import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WatchListFragment : Fragment() {

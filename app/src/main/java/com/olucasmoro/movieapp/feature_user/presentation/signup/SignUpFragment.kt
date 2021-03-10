@@ -8,23 +8,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.olucasmoro.movieapp.MainActivity
-import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import com.olucasmoro.movieapp.databinding.FragmentUserSignUpBinding
 import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
 import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
 import com.olucasmoro.movieapp.feature_album.presentation.utils.ProviderType
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
+import com.olucasmoro.movieapp.feature_user.data.local.User
 import com.olucasmoro.movieapp.feature_user.presentation.login.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SignUpFragment : Fragment(), View.OnClickListener {
 
     private var userToken: String = ""
+
+    private lateinit var rootNode: FirebaseDatabase
+    private lateinit var referenceFirebase: DatabaseReference
 
     private val viewModel: LoginViewModel by viewModel()
     private val binding by lazy {
@@ -35,6 +37,9 @@ class SignUpFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        rootNode = FirebaseDatabase.getInstance()
+        referenceFirebase = rootNode.getReference("users")
 
         return binding.root
     }
@@ -63,10 +68,13 @@ class SignUpFragment : Fragment(), View.OnClickListener {
             val password = binding.signUpPassword.editText?.text.toString()
             val username = binding.signUpName.editText?.text.toString()
 
-            showMovieActivity(username, password, email, ProviderType.BASIC)
-            findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToCheckValidationFragment())
-//            createToken()
+            val user: User = User(1, username, email, password, "0000")
+            referenceFirebase.child(username).setValue(user)
 
+            saveUserData(username, password, email, ProviderType.BASIC)
+            createToken()
+            findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToCheckValidationFragment())
+            
 //            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
 //                .addOnCompleteListener {
 //
@@ -99,7 +107,7 @@ class SignUpFragment : Fragment(), View.OnClickListener {
         binding.tvLogin.setOnClickListener(this)
     }
 
-    private fun showMovieActivity(
+    private fun saveUserData(
         username: String,
         password: String,
         email: String,
@@ -108,9 +116,8 @@ class SignUpFragment : Fragment(), View.OnClickListener {
         val mSharedPreferences = SecurityPreferences(requireContext())
         mSharedPreferences.store(Constants.AUTHENTICATION.EMAIL, email)
         mSharedPreferences.store(Constants.AUTHENTICATION.USERNAME, username)
-        mSharedPreferences.store(Constants.AUTHENTICATION.PROVIDER, provider.name)
         mSharedPreferences.store(Constants.AUTHENTICATION.PASSWORD, password)
-
+        mSharedPreferences.store(Constants.AUTHENTICATION.PROVIDER, provider.name)
     }
 
     private fun createToken() {

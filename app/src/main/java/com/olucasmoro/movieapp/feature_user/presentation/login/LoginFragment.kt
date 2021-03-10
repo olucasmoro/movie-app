@@ -53,8 +53,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View) {
         when (view) {
-            binding.buttonLoginBtnLogin -> validateToken("aaaa")
-//            binding.buttonLoginBtnLogin -> signInUser()
+//            binding.buttonLoginBtnLogin -> //validateToken("aaaa")
+            binding.buttonLoginBtnLogin -> signInUser()
             binding.tvNewUser -> findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
         }
     }
@@ -142,7 +142,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                     is CallResults.Success -> {
                         response.data?.let { user ->
                             val requestToken = user.request_token
-                            createSessionWithLogin(requestToken)
+//                            createSessionWithLogin(requestToken)
                             true
                         } ?: false
                     }
