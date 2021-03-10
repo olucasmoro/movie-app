@@ -20,15 +20,6 @@ interface UserApiService {
         @Field("request_token") token: String
     ): Response<SessionResponse>
 
-    @POST("3/authentication/session/convert/4")
-    @FormUrlEncoded
-    suspend fun createSessionWithLogin(
-        @Field("api_key") key: String,
-        @Field("username") username: String,
-        @Field("password") password: String,
-        @Field("request_token") token: String
-    ): Response<TokenResponse>
-
     @GET("3/account")
     suspend fun getUserDetail(
         @Query("api_key") key: String,

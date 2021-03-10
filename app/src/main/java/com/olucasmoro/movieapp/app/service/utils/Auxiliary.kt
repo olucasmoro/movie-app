@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.feature_album.presentation.utils
+package com.olucasmoro.movieapp.app.view.utils
 
 import android.content.Context
 import android.widget.Toast
