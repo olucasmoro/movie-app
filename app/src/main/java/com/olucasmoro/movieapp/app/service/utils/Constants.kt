@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.app.view.utils
+package com.olucasmoro.movieapp.app.service.utils
 
 class Constants private constructor() {
 

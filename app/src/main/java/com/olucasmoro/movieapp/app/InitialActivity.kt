@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.app.view
+package com.olucasmoro.movieapp.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

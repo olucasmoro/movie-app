@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.olucasmoro.movieapp.databinding.FragmentMovieDetailBinding
 import com.olucasmoro.movieapp.feature_album.data.model.MovieDetail
-import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -33,8 +33,8 @@ class MovieDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        //isWatchlist = args.watchlist.toBoolean()
-        //updateScreen2(isWatchlist, isWatched)
+//        isWatchlist = args.watchlist.toBoolean()
+//        updateScreen2(isWatchlist, isWatched)
 
         val movieId = args.movieId.toInt()
         getDetailMovie(movieId)

@@ -12,9 +12,9 @@ interface AlbumApiService {
 
     @GET("3/movie/{movie_type}")
     suspend fun getMovies(
-            @Path("movie_type") movieType: String?,
-            @Query("api_key") key: String,
-            @Query("page") page: String
+        @Path("movie_type") movieType: String?,
+        @Query("api_key") key: String,
+        @Query("page") page: String
     ): Response<MovieResponse>
 
     @GET("3/movie/{id}")
@@ -23,7 +23,6 @@ interface AlbumApiService {
         @Query("api_key") key: String
     ): Response<MovieDetail>
 
-    //Busca
     @GET("3/search/movie")
     suspend fun getSearchMovie(
         @Query("api_key") key: String,

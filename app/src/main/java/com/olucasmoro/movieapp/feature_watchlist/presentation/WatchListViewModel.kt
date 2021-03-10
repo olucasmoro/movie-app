@@ -2,8 +2,8 @@ package com.olucasmoro.movieapp.feature_watchlist.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_watchlist.data.model.Movie
 import com.olucasmoro.movieapp.feature_watchlist.domain.usecase.WatchlistUseCase
 

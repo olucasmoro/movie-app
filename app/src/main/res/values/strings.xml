@@ -64,7 +64,7 @@
     <string name="actors_title">Actors</string>
     <string name="famous_phrase">Famous phrase</string>
 
-    <string name="app_name">MyMovieApp</string>
+    <string name="app_name">MovieApp</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Movies</string>
     <string name="title_dashboard">Dashboard</string>

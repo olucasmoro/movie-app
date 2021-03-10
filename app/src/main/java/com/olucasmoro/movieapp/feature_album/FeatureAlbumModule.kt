@@ -7,7 +7,7 @@ import com.olucasmoro.movieapp.feature_album.data.api.AlbumApiService
 import com.olucasmoro.movieapp.feature_album.domain.repository.AlbumRepository
 import com.olucasmoro.movieapp.feature_album.domain.usecase.AlbumUseCase
 import com.olucasmoro.movieapp.feature_album.presentation.moviedetail.MovieDetailViewModel
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants.API.BASE_URL
+import com.olucasmoro.movieapp.app.service.utils.Constants.API.BASE_URL
 import com.olucasmoro.movieapp.feature_album.presentation.movielist.MovieListViewModel
 import com.olucasmoro.movieapp.feature_album.presentation.moviesearch.MovieSearchViewModel
 import com.olucasmoro.movieapp.feature_user.data.api.UserApiService

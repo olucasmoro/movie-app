@@ -1,4 +1,4 @@
-package com.olucasmoro.movieapp.app.view.utils
+package com.olucasmoro.movieapp.app.service.utils
 
 import android.content.Context
 import android.widget.Toast
@@ -12,5 +12,4 @@ class Auxiliary {
         }
 
     }
-
 }

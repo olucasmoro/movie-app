@@ -1,8 +1,8 @@
 package com.olucasmoro.movieapp.feature_watchlist.data.source
 
 import androidx.lifecycle.liveData
-import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_watchlist.data.api.WatchlistApiService
 import java.net.ConnectException
 

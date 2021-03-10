@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35sp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_5sdp">
+                android:paddingEnd="@dimen/_10sdp">
 
                 <TextView
                     android:id="@+id/tv_popular"
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35sp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
                 tools:ignore="RtlSymmetry">
 
                 <TextView
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35sp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
                 tools:ignore="RtlSymmetry">
 
                 <TextView
@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35sp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
                 tools:ignore="RtlSymmetry">
 
                 <TextView

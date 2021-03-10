@@ -7,7 +7,7 @@ import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.R
 import com.olucasmoro.movieapp.feature_album.data.model.Search
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_search.view.*
 

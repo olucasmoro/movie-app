@@ -11,9 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.databinding.FragmentMovieSearchBinding
-import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Constants
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieSearchFragment : Fragment() {

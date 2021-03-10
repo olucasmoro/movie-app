@@ -1,6 +1,5 @@
 package com.olucasmoro.movieapp.app.view.onboarding
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -13,10 +12,9 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
-import com.olucasmoro.movieapp.MainActivity
 import com.olucasmoro.movieapp.R
 import com.olucasmoro.movieapp.databinding.FragmentOnBoardingBinding
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
+import com.olucasmoro.movieapp.app.service.utils.Constants
 
 class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), View.OnClickListener {
 
@@ -60,7 +58,7 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), View.OnClick
         when (v) {
             binding.btnStarted -> skipSlides()
             binding.btnSkip -> skipSlides()
-            binding.btnNext -> next()
+            binding.btnNext -> nextSlide()
         }
     }
 
@@ -89,16 +87,12 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), View.OnClick
         }
     }
 
-    // Skip just one slide
-    fun next() {
+    private fun nextSlide() {
         binding.slider.currentItem = currentPosition + 1
     }
 
-    // Skip the slides
     private fun skipSlides() {
         findNavController().navigate(OnBoardingFragmentDirections.actionOnBoardingFragmentToLoginFragment())
-//        val intent = Intent(context, MainActivity::class.java)
-//        startActivity(intent)
     }
 
     private var changeListener: ViewPager.OnPageChangeListener = object :

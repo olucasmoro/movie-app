@@ -24,13 +24,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="@color/colorPrimaryDark"
+        app:itemRippleColor="@color/colorIcon"
         app:itemIconTint="@color/colorIcon"
-        app:itemRippleColor="@color/white"
-        app:itemTextColor="@color/white"
+        app:itemTextColor="@color/colorIcon"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    app:itemIconTint="@color/colorIcon"-->
+<!--    app:itemRippleColor="@color/white"-->
+<!--    app:itemTextColor="@color/white"-->

@@ -10,11 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.databinding.FragmentMovieListBinding
 import com.olucasmoro.movieapp.feature_album.data.model.Movie
-import com.olucasmoro.movieapp.feature_album.domain.entity.CallResults
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Constants
-import com.olucasmoro.movieapp.feature_album.presentation.utils.Auxiliary
-import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
-import kotlinx.android.synthetic.main.activity_main.*
+import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.app.service.utils.Constants
+import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieListFragment : Fragment(), View.OnClickListener {
@@ -33,9 +32,6 @@ class MovieListFragment : Fragment(), View.OnClickListener {
     ): View {
 
         searchMovies()
-
-        val  mSharedPreferences = SecurityPreferences(requireContext())
-        val sessionId = mSharedPreferences.get(Constants.AUTHENTICATION.SESSION_ID)
 
         setListeners()
 
@@ -65,7 +61,7 @@ class MovieListFragment : Fragment(), View.OnClickListener {
                     }
                     is CallResults.Success -> {
                         response.data?.let { movies ->
-                            defineAdapter(movies, Constants.MOVIETYPE.POPULAR)
+                            defineAdapter(movies, Constants.TYPE.POPULAR)
                             true
                         } ?: false
                     }
@@ -78,7 +74,7 @@ class MovieListFragment : Fragment(), View.OnClickListener {
                 when (response) {
                     is CallResults.Success -> {
                         response.data?.let { movies ->
-                            defineAdapter(movies, Constants.MOVIETYPE.NOW_PLAYING)
+                            defineAdapter(movies, Constants.TYPE.NOW_PLAYING)
                             true
                         } ?: false
                     }
@@ -98,7 +94,7 @@ class MovieListFragment : Fragment(), View.OnClickListener {
                 when (response) {
                     is CallResults.Success -> {
                         response.data?.let { movies ->
-                            defineAdapter(movies, Constants.MOVIETYPE.TOP_RATED)
+                            defineAdapter(movies, Constants.TYPE.TOP_RATED)
                             true
                         } ?: false
                     }
@@ -118,7 +114,7 @@ class MovieListFragment : Fragment(), View.OnClickListener {
                 when (response) {
                     is CallResults.Success -> {
                         response.data?.let { movies ->
-                            defineAdapter(movies, Constants.MOVIETYPE.UPCOMING)
+                            defineAdapter(movies, Constants.TYPE.UPCOMING)
                             true
                         } ?: false
                     }
@@ -150,22 +146,22 @@ class MovieListFragment : Fragment(), View.OnClickListener {
 
     private fun updateAdapter(movieType: String) {
         when (movieType) {
-            Constants.MOVIETYPE.POPULAR -> binding.rvPopular.apply {
+            Constants.TYPE.POPULAR -> binding.rvPopular.apply {
                 layoutManager =
                     LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
                 adapter = movieListAdapter
             }
-            Constants.MOVIETYPE.TOP_RATED -> binding.rvTopRated.apply {
+            Constants.TYPE.TOP_RATED -> binding.rvTopRated.apply {
                 layoutManager =
                     LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
                 adapter = movieListAdapter
             }
-            Constants.MOVIETYPE.UPCOMING -> binding.rvUpcoming.apply {
+            Constants.TYPE.UPCOMING -> binding.rvUpcoming.apply {
                 layoutManager =
                     LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
                 adapter = movieListAdapter
             }
-            Constants.MOVIETYPE.NOW_PLAYING -> binding.rvNowPlaying.apply {
+            Constants.TYPE.NOW_PLAYING -> binding.rvNowPlaying.apply {
                 layoutManager =
                     LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
                 adapter = movieListAdapter
