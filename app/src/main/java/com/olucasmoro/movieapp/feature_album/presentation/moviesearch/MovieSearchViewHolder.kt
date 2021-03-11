@@ -1,30 +1,28 @@
 package com.olucasmoro.movieapp.feature_album.presentation.moviesearch
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
-import com.olucasmoro.movieapp.R
 import com.olucasmoro.movieapp.feature_album.data.model.Search
 import com.olucasmoro.movieapp.app.service.utils.Constants
+import com.olucasmoro.movieapp.databinding.ItemSearchBinding
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_search.view.*
 
-class MovieSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MovieSearchViewHolder(private val itemBinding: ItemSearchBinding) :
+    RecyclerView.ViewHolder(itemBinding.root) {
 
     fun bind(movie: Search, findNavController: NavController) {
-
-        itemView.textTitle.text = movie.original_title
+        itemBinding.textTitle.text = movie.original_title
 
         val target: String = movie.poster_path
 
-        itemView.textReleaseDate.text = movie.release_date
-        itemView.textEvaluation.text = movie.vote_average
+        itemBinding.textReleaseDate.text = movie.release_date
+        itemBinding.textEvaluation.text = movie.vote_average
 
-        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).into(itemView.imagePoster)
+        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).into(itemBinding.imagePoster)
 
-        itemView.cardPoster.setOnClickListener {
+        itemBinding.cardPoster.setOnClickListener {
             findNavController.navigate(
                 MovieSearchFragmentDirections.actionMovieSearchFragmentToMovieDetailFragment(
                     movie.id
@@ -35,8 +33,12 @@ class MovieSearchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
 
     companion object {
         fun inflate(parent: ViewGroup): MovieSearchViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_search, parent, false)
+
+            val view = ItemSearchBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
             return MovieSearchViewHolder(view)
         }
     }

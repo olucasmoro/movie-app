@@ -31,7 +31,7 @@ class MovieDetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
 //        isWatchlist = args.watchlist.toBoolean()
 //        updateScreen2(isWatchlist, isWatched)

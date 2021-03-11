@@ -12,6 +12,7 @@ import com.olucasmoro.movieapp.databinding.FragmentUserSignUpBinding
 import com.olucasmoro.movieapp.app.service.model.CallResults
 import com.olucasmoro.movieapp.app.service.utils.Auxiliary
 import com.olucasmoro.movieapp.app.service.utils.Constants
+import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,16 +21,22 @@ class SignUpFragment : Fragment(), View.OnClickListener {
     private lateinit var mSharedPreferences: SecurityPreferences
 
     private val viewModel: SignUpViewModel by viewModel()
-    private val binding by lazy {
-        FragmentUserSignUpBinding.inflate(layoutInflater)
-    }
+//    private val binding by lazy {
+//        FragmentUserSignUpBinding.inflate(layoutInflater)
+//    }
+    private var _binding: FragmentUserSignUpBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentUserSignUpBinding.inflate(layoutInflater)
+
         setListeners()
+
         mSharedPreferences = SecurityPreferences(requireContext())
+
         return binding.root
     }
 

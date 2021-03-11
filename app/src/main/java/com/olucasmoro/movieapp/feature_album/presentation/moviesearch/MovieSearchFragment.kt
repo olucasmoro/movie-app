@@ -14,15 +14,18 @@ import com.olucasmoro.movieapp.databinding.FragmentMovieSearchBinding
 import com.olucasmoro.movieapp.app.service.model.CallResults
 import com.olucasmoro.movieapp.app.service.utils.Auxiliary
 import com.olucasmoro.movieapp.app.service.utils.Constants
+import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieSearchFragment : Fragment() {
 
     private val viewModel: MovieSearchViewModel by viewModel()
 
-    private val binding by lazy {
-        FragmentMovieSearchBinding.inflate(layoutInflater)
-    }
+//    private val binding by lazy {
+//        FragmentMovieSearchBinding.inflate(layoutInflater)
+//    }
+    private var _binding: FragmentMovieSearchBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var searchAdapter: MovieSearchAdapter
 
@@ -32,6 +35,7 @@ class MovieSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        _binding = FragmentMovieSearchBinding.inflate(layoutInflater)
 
         binding.editQuery.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

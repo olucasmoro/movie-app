@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.olucasmoro.movieapp.app.service.utils.Auxiliary
 import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import com.olucasmoro.movieapp.app.service.utils.Constants
+import com.olucasmoro.movieapp.databinding.FragmentWatchlistBinding
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -17,14 +18,19 @@ class LoginFragment : Fragment(), View.OnClickListener {
     private lateinit var mSharedPreferences: SecurityPreferences
 
     private val viewModel: LoginViewModel by viewModel()
-    private val binding by lazy {
-        FragmentUserLoginBinding.inflate(layoutInflater)
-    }
+//    private val binding by lazy {
+//        FragmentUserLoginBinding.inflate(layoutInflater)
+//    }
+
+    private var _binding: FragmentUserLoginBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        _binding = FragmentUserLoginBinding.inflate(layoutInflater)
 
         mSharedPreferences = SecurityPreferences(requireContext())
 

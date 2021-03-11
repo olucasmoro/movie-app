@@ -18,9 +18,11 @@ class WatchListFragment : Fragment() {
     private lateinit var mSharedPreferences: SecurityPreferences
 
     private val viewModel: WatchListViewModel by viewModel()
-    private val binding by lazy {
-        FragmentWatchlistBinding.inflate(layoutInflater)
-    }
+//    private val binding by lazy {
+//        FragmentWatchlistBinding.inflate(layoutInflater)
+//    }
+    private var _binding: FragmentWatchlistBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var watchlistAdapter: WatchListAdapter
 
@@ -29,7 +31,7 @@ class WatchListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        _binding = FragmentWatchlistBinding.inflate(layoutInflater)
         mSharedPreferences = SecurityPreferences(requireContext())
 
         val userId = 10147690
@@ -38,6 +40,11 @@ class WatchListFragment : Fragment() {
         getWatchlist(userId, sessionId)
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun getWatchlist(userId: Int, sessionId: String) {

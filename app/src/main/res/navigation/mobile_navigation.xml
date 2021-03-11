@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/movieDetailFragment"
         android:name="com.olucasmoro.movieapp.feature_album.presentation.moviedetail.MovieDetailFragment"
-        android:label="MovieDetailFragment"
+        android:label=""
         tools:layout="@layout/fragment_movie_detail">
         <argument
             android:name="movieId"
@@ -60,7 +60,7 @@
         tools:layout="@layout/fragment_watchlist">
         <action
             android:id="@+id/action_watchListFragment_to_movieDetailFragment"
-            app:destination="@id/movieDetailFragment" >
+            app:destination="@id/movieDetailFragment">
             <argument
                 android:name="movieId"
                 android:defaultValue=""

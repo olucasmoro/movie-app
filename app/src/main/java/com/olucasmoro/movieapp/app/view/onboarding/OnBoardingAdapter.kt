@@ -4,12 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.olucasmoro.movieapp.R
-import kotlinx.android.synthetic.main.item_slide.view.*
+import com.olucasmoro.movieapp.databinding.ItemSlideBinding
 
 class OnBoardingAdapter(private var context: Context) : PagerAdapter() {
 
@@ -52,12 +50,19 @@ class OnBoardingAdapter(private var context: Context) : PagerAdapter() {
         layoutInflater =
             context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-        val view: View = layoutInflater.inflate(R.layout.item_slide, container, false)
 
-        view.slider_img.setImageResource(images[position])
-        view.slide_heading.setText(headings[position])
-        view.slider_desc.setText(descriptions[position])
-        container.addView(view)
+        val view = ItemSlideBinding.inflate(
+            layoutInflater,
+            container,
+            false
+        )
+
+//        val view: View = layoutInflater.inflate(R.layout.item_slide, container, false)
+
+        view.sliderImg.setImageResource(images[position])
+        view.slideHeading.setText(headings[position])
+        view.sliderDesc.setText(descriptions[position])
+        container.addView(view.root)
         return view
     }
 
