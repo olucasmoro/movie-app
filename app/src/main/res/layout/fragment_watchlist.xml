@@ -26,6 +26,4 @@
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
         tools:listitem="@layout/item_movie" />
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

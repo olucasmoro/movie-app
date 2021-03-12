@@ -46,7 +46,6 @@ class Constants private constructor() {
     }
 
     object DOTS {
-        const val AMOUNT_DOTS_SLIDE = 4
         const val POSITION_LAST_DOTS = 2
     }
 

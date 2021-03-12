@@ -13,7 +13,7 @@ class WatchlistUseCase(
         userId: Int,
         sessionId: String,
         apiKey: String
-    ): LiveData<CallResults<List<Movie>?>> {
-        return repository.getWatchlist(userId, sessionId, apiKey)
-    }
+    ): LiveData<CallResults<List<Movie>?>> =
+        repository.getWatchlist(userId, sessionId, apiKey)
+
 }

@@ -31,6 +31,6 @@ class AlbumRepositoryImpl(
         apiKey: String,
         movieId: Int
     ): LiveData<CallResults<WatchlistResponse?>> {
-        return  remoteData.addWatchlist(accountId, sessionId, apiKey, movieId)
+        return remoteData.addWatchlist(accountId, sessionId, apiKey, movieId)
     }
 }

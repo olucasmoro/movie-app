@@ -100,7 +100,7 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), View.OnClick
 
         override fun onPageSelected(position: Int) {
             addDots(position)
-            currentPosition = position //Stores current position
+            currentPosition = position
             if (position != Constants.DOTS.POSITION_LAST_DOTS) {
                 binding.btnStarted.isVisible = false
                 binding.btnSkip.isVisible = true

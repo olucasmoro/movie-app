@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.olucasmoro.movieapp.databinding.FragmentUserSignUpBinding
 import com.olucasmoro.movieapp.app.service.model.CallResults
-import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -62,7 +62,7 @@ class SignUpFragment : Fragment(), View.OnClickListener {
 
             createToken()
         } else {
-            Auxiliary.toastDisplay(requireContext(), "Fill in all fields")
+            Toast.toastDisplay(requireContext(), "Fill in all fields")
         }
     }
 
@@ -76,11 +76,10 @@ class SignUpFragment : Fragment(), View.OnClickListener {
             it?.let { response ->
                 when (response) {
                     is CallResults.Error -> {
-                        Auxiliary.toastDisplay(
+                        Toast.toastDisplay(
                             requireContext(),
                             Constants.MESSAGE.FAILURE_CONNECTION
                         )
-                        false
                     }
                     is CallResults.Success -> {
                         response.data?.let { user ->
@@ -90,10 +89,10 @@ class SignUpFragment : Fragment(), View.OnClickListener {
                             )
                             validateToken(user.request_token)
                             true
-                        } ?: false
+                        }
                     }
                 }
-            } ?: false
+            }
         }
     }
 

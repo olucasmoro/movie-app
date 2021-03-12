@@ -33,7 +33,7 @@
             android:layout_height="@dimen/_23sdp"
             android:layout_centerVertical="true"
             android:contentDescription="@string/search"
-            app:srcCompat="@drawable/if_67_111124" />
+            app:srcCompat="@drawable/ic_search1" />
 
         <ImageView
             android:background="@color/transparent"
@@ -45,7 +45,7 @@
             android:layout_marginEnd="10dp"
             android:contentDescription="@string/search"
             android:visibility="visible"
-            app:srcCompat="@drawable/if_icon_close_circled_small" />
+            app:srcCompat="@drawable/if_icon_close" />
 
     </RelativeLayout>
 

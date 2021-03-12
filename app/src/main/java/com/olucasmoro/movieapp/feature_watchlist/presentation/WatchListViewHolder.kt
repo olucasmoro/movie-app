@@ -17,14 +17,7 @@ class WatchListViewHolder(private val itemBinding: ItemMovieWatchlistBinding) :
 
     fun bind(movie: Movie, findNavController: NavController) {
 
-//        itemBinding.tvNameOurTitle.text = movie.original_title
-//        itemBinding.rating.text = movie.vote_average
-//        itemBinding.ratingBar.rating = movie.vote_average.toFloat() / 2.0f
         val target = movie.poster_path
-
-//        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).resize(140, 170)
-//            .into(itemBinding.imgLiview)
-
         Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).into(itemBinding.imagePoster)
 
         itemBinding.root.setOnClickListener {

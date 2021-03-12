@@ -20,6 +20,4 @@ class MovieDetailViewModel(private val useCase: AlbumUseCase) : ViewModel() {
     ): LiveData<CallResults<WatchlistResponse?>> =
         useCase.addWatchlist(accountId, sessionId, Constants.API.API_KEY, movieId)
 
-    var isWatched: Boolean = false
-    var isWatchlist: Boolean = false
 }

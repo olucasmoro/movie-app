@@ -35,12 +35,6 @@ class OnBoardingAdapter(private var context: Context) : PagerAdapter() {
         return headings.size
     }
 
-    /**
-     * Returns a boolean if the view is the one we are using
-     * @param view
-     * @param object
-     * @return
-     */
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return view === `object` as ConstraintLayout
     }
@@ -50,20 +44,17 @@ class OnBoardingAdapter(private var context: Context) : PagerAdapter() {
         layoutInflater =
             context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-
-        val view = ItemSlideBinding.inflate(
+        val viewBinding = ItemSlideBinding.inflate(
             layoutInflater,
             container,
             false
         )
 
-//        val view: View = layoutInflater.inflate(R.layout.item_slide, container, false)
-
-        view.sliderImg.setImageResource(images[position])
-        view.slideHeading.setText(headings[position])
-        view.sliderDesc.setText(descriptions[position])
-        container.addView(view.root)
-        return view
+        viewBinding.sliderImg.setImageResource(images[position])
+        viewBinding.slideHeading.setText(headings[position])
+        viewBinding.sliderDesc.setText(descriptions[position])
+        container.addView(viewBinding.root)
+        return viewBinding
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {

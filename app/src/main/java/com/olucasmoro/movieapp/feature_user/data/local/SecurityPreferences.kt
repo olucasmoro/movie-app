@@ -31,7 +31,7 @@ class SecurityPreferences(context: Context) {
 
     fun getUser(key: String): User {
         val gson = Gson()
-        val json: String? = mPreferences.getString("User", "")
+        val json: String? = mPreferences.getString(key, "")
         return gson.fromJson(json, User::class.java)
     }
 

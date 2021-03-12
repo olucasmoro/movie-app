@@ -16,11 +16,7 @@ class MovieListViewHolder(private val itemBinding: ItemMovieBinding) :
     fun bind(movie: Movie, findNavController: NavController) {
         itemBinding.tvNameOurTitle.text = movie.original_title
         itemBinding.rating.text = movie.vote_average
-//        itemBinding.rat.rating = movie.vote_average.toFloat() / 2.0f
         val target = movie.poster_path
-
-//        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).resize(140, 170)
-//            .into(itemBinding.imagePoster)
 
         Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).into(itemBinding.imagePoster)
 
@@ -34,7 +30,6 @@ class MovieListViewHolder(private val itemBinding: ItemMovieBinding) :
     }
 
     companion object {
-
         fun inflate(parent: ViewGroup): MovieListViewHolder {
             val view = ItemMovieBinding.inflate(
                 LayoutInflater.from(parent.context),

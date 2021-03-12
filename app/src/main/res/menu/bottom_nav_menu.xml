@@ -16,7 +16,7 @@
     <item
         android:enabled="true"
         android:id="@+id/navigation_watchlist"
-        android:icon="@drawable/ic_my_list"
+        android:icon="@drawable/ic_favorite_fill"
         android:title="@string/my_list" />
 
 <!--    <item-->

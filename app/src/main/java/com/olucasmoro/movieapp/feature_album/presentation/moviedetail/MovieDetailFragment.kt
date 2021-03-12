@@ -11,7 +11,7 @@ import com.olucasmoro.movieapp.R
 import com.olucasmoro.movieapp.databinding.FragmentMovieDetailBinding
 import com.olucasmoro.movieapp.feature_album.data.model.MovieDetail
 import com.olucasmoro.movieapp.app.service.model.CallResults
-import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import com.squareup.picasso.Picasso
@@ -29,7 +29,6 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
     private lateinit var mSharedPreferences: SecurityPreferences
 
     private var isWatchlist = false
-    private var isWatched = false
     private var movieId = 0
 
     override fun onCreateView(
@@ -39,8 +38,6 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
     ): View {
 
         mSharedPreferences = SecurityPreferences(requireContext())
-//        isWatchlist = args.watchlist.toBoolean()
-//        updateScreen2(isWatchlist, isWatched)
 
         binding.ivFavorite.setOnClickListener(this)
 
@@ -59,17 +56,16 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
                         response.data?.let { movie ->
                             updateScreen(movie)
                             true
-                        } ?: false
+                        }
                     }
                     is CallResults.Error -> {
-                        Auxiliary.toastDisplay(
+                        Toast.toastDisplay(
                             requireContext(),
                             Constants.MESSAGE.FAILURE_CONNECTION
                         )
-                        false
                     }
                 }
-            } ?: false
+            }
         }
     }
 
@@ -90,10 +86,6 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
             .into(binding.ivBackdrop)
     }
 
-    private fun updateScreen2(watchlist: Boolean, watched: Boolean) {
-        binding.ivFavorite.isVisible = true
-    }
-
     override fun onClick(v: View?) {
         when (v) {
             binding.ivFavorite -> {
@@ -105,7 +97,7 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
                     sessionId = sessionId,
                     movieId = movieId
                 )
-                Auxiliary.toastDisplay(requireContext(), "Add to watchlist")
+                Toast.toastDisplay(requireContext(), "Add to watchlist")
             }
 
         }

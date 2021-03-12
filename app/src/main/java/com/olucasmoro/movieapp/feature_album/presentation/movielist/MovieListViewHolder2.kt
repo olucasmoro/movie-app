@@ -19,9 +19,6 @@ class MovieListViewHolder2(private val itemBinding: ItemMovieLargeBinding) :
         itemBinding.ratingBar2.rating = movie.vote_average.toFloat() / 2.0f
         val target = movie.poster_path
 
-//        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).resize(140, 170)
-//            .into(itemBinding.imagePoster)
-
         Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).into(itemBinding.imagePoster)
 
         itemBinding.root.setOnClickListener {
@@ -34,16 +31,12 @@ class MovieListViewHolder2(private val itemBinding: ItemMovieLargeBinding) :
     }
 
     companion object {
-
         fun inflate(parent: ViewGroup): MovieListViewHolder2 {
             val view = ItemMovieLargeBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
-
-//            val view = LayoutInflater.from(parent.context)
-//                .inflate(R.layout.item_movie, parent, false)
             return MovieListViewHolder2(view)
         }
     }

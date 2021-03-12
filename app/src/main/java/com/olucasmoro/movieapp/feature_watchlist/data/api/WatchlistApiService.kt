@@ -13,6 +13,5 @@ interface WatchlistApiService {
         @Query("api_key") key: String,
         @Query("session_id") session_id: String
     ): Response<WatchlistResponse>
-
-
+    
 }

@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.olucasmoro.movieapp.app.service.model.CallResults
-import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.databinding.FragmentWatchlistBinding
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
@@ -20,9 +20,6 @@ class WatchListFragment : Fragment() {
 
     private val viewModel: WatchListViewModel by viewModel()
 
-    //    private val binding by lazy {
-//        FragmentWatchlistBinding.inflate(layoutInflater)
-//    }
     private var _binding: FragmentWatchlistBinding? = null
     private val binding get() = _binding!!
 
@@ -36,7 +33,7 @@ class WatchListFragment : Fragment() {
         _binding = FragmentWatchlistBinding.inflate(layoutInflater)
         mSharedPreferences = SecurityPreferences(requireContext())
 
-        val userId = 10147690
+        val userId = 10147690 //mSharedPreferences.get(Constants.AUTHENTICATION.USER_ID)
         val sessionId = mSharedPreferences.get(Constants.AUTHENTICATION.SESSION_ID)
 
         getWatchlist(userId, sessionId)
@@ -59,17 +56,16 @@ class WatchListFragment : Fragment() {
                             updateAdapter()
                             watchlistAdapter.notifyDataSetChanged()
                             true
-                        } ?: false
+                        }
                     }
                     is CallResults.Error -> {
-                        Auxiliary.toastDisplay(
+                        Toast.toastDisplay(
                             requireContext(),
                             Constants.MESSAGE.FAILURE_CONNECTION
                         )
-                        false
                     }
                 }
-            } ?: false
+            }
         }
     }
 

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.olucasmoro.movieapp.MainActivity
 import com.olucasmoro.movieapp.databinding.FragmentCheckValidationBinding
 import com.olucasmoro.movieapp.app.service.model.CallResults
-import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -48,11 +48,10 @@ class CheckValidationFragment : Fragment(), View.OnClickListener {
             it?.let { response ->
                 when (response) {
                     is CallResults.Error -> {
-                        Auxiliary.toastDisplay(
+                        Toast.toastDisplay(
                             requireContext(),
                             Constants.MESSAGE.FAILURE_CONNECTION
                         )
-                        false
                     }
                     is CallResults.Success -> {
                         response.data?.let { data ->
@@ -63,10 +62,10 @@ class CheckValidationFragment : Fragment(), View.OnClickListener {
                             saveUser(data.session_id)
                             startActivity(Intent(requireContext(), MainActivity::class.java))
                             true
-                        } ?: false
+                        }
                     }
                 }
-            } ?: false
+            }
         }
     }
 

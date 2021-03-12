@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import com.olucasmoro.movieapp.app.service.utils.Constants
-import com.olucasmoro.movieapp.databinding.FragmentWatchlistBinding
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -69,7 +68,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
             when (response) {
                 Constants.FIREBASE.ERROR -> {
-                    Auxiliary.toastDisplay(requireContext(), "Error!")
+                    Toast.toastDisplay(requireContext(), "Error!")
                 }
                 Constants.FIREBASE.SUCCESS -> {
                     // Salvar usuário no Cache

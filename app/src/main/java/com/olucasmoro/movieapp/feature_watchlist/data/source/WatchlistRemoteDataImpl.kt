@@ -6,7 +6,7 @@ import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_watchlist.data.api.WatchlistApiService
 import java.net.ConnectException
 
-class WatchlistRemoteDataImpl(private val apiService: WatchlistApiService) : WatchlistRemoteData{
+class WatchlistRemoteDataImpl(private val apiService: WatchlistApiService) : WatchlistRemoteData {
 
     override fun getWatchlist(userId: Int, sessionId: String, apiKey: String) = liveData {
         try {

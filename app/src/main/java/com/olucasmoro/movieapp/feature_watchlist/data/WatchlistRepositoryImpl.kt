@@ -14,7 +14,7 @@ class WatchlistRepositoryImpl(
         userId: Int,
         sessionId: String,
         apiKey: String
-    ): LiveData<CallResults<List<Movie>?>> {
-        return remoteData.getWatchlist(userId, sessionId, apiKey)
-    }
+    ): LiveData<CallResults<List<Movie>?>> =
+        remoteData.getWatchlist(userId, sessionId, apiKey)
+
 }

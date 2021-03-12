@@ -12,18 +12,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.databinding.FragmentMovieSearchBinding
 import com.olucasmoro.movieapp.app.service.model.CallResults
-import com.olucasmoro.movieapp.app.service.utils.Auxiliary
+import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
-import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieSearchFragment : Fragment() {
 
     private val viewModel: MovieSearchViewModel by viewModel()
 
-//    private val binding by lazy {
-//        FragmentMovieSearchBinding.inflate(layoutInflater)
-//    }
     private var _binding: FragmentMovieSearchBinding? = null
     private val binding get() = _binding!!
 
@@ -63,17 +59,16 @@ class MovieSearchFragment : Fragment() {
                             updateAdapter()
                             searchAdapter.notifyDataSetChanged()
                             true
-                        } ?: false
+                        }
                     }
                     is CallResults.Error -> {
-                        Auxiliary.toastDisplay(
+                        Toast.toastDisplay(
                             requireContext(),
                             Constants.MESSAGE.FAILURE_CONNECTION
                         )
-                        false
                     }
                 }
-            } ?: false
+            }
         }
     }
 

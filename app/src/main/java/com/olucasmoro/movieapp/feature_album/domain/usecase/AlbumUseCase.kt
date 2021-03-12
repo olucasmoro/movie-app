@@ -10,24 +10,21 @@ import com.olucasmoro.movieapp.feature_album.domain.repository.AlbumRepository
 
 class AlbumUseCase(private val repository: AlbumRepository) {
 
-    fun getMovies(movieType: String, apiKey: String): LiveData<CallResults<List<Movie>?>> {
-        return repository.getMovies(movieType, apiKey)
-    }
+    fun getMovies(movieType: String, apiKey: String): LiveData<CallResults<List<Movie>?>> =
+        repository.getMovies(movieType, apiKey)
 
-    fun getDetailMovie(movieId: Int, apiKey: String): LiveData<CallResults<MovieDetail?>> {
-        return repository.getDetailMovie(movieId, apiKey)
-    }
+    fun getDetailMovie(movieId: Int, apiKey: String): LiveData<CallResults<MovieDetail?>> =
+        repository.getDetailMovie(movieId, apiKey)
 
-    fun searchMovie(str: String, apiKey: String): LiveData<CallResults<List<Search>?>> {
-        return repository.searchMovie(str, apiKey)
-    }
+    fun searchMovie(str: String, apiKey: String): LiveData<CallResults<List<Search>?>> =
+        repository.searchMovie(str, apiKey)
 
     fun addWatchlist(
         accountId: Int,
         sessionId: String,
         apiKey: String,
         movieId: Int
-    ): LiveData<CallResults<WatchlistResponse?>> {
-        return repository.addWatchlist(accountId, sessionId, apiKey, movieId)
-    }
+    ): LiveData<CallResults<WatchlistResponse?>> =
+        repository.addWatchlist(accountId, sessionId, apiKey, movieId)
+
 }
