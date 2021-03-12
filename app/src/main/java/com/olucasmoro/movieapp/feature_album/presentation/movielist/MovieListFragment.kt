@@ -61,7 +61,14 @@ class MovieListFragment : Fragment(), View.OnClickListener {
                     }
                     is CallResults.Success -> {
                         response.data?.let { movies ->
-                            defineAdapter(movies, Constants.TYPE.POPULAR)
+                            //defineAdapter(movies, Constants.TYPE.POPULAR)
+                            val movieListAdapter2 = MovieListAdapter2(movies, findNavController())
+                            movieListAdapter2.notifyDataSetChanged()
+                            binding.rvPopular.apply {
+                                layoutManager =
+                                    LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+                                adapter = movieListAdapter2
+                            }
                             true
                         } ?: false
                     }
@@ -138,8 +145,8 @@ class MovieListFragment : Fragment(), View.OnClickListener {
         binding.tvAllUpcoming.setOnClickListener(this)
     }
 
-    private fun defineAdapter(movie: List<Movie>, movieType: String) {
-        movieListAdapter = MovieListAdapter(movie, findNavController())
+    private fun defineAdapter(movies: List<Movie>, movieType: String) {
+        movieListAdapter = MovieListAdapter(movies, findNavController())
         updateAdapter(movieType)
         movieListAdapter.notifyDataSetChanged()
     }

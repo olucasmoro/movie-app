@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.olucasmoro.movieapp.feature_album.data.model.Movie
 import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.databinding.ItemMovieBinding
+import com.olucasmoro.movieapp.databinding.ItemMovieLargeBinding
 import com.squareup.picasso.Picasso
 
 class MovieListViewHolder(private val itemBinding: ItemMovieBinding) :
@@ -15,11 +16,13 @@ class MovieListViewHolder(private val itemBinding: ItemMovieBinding) :
     fun bind(movie: Movie, findNavController: NavController) {
         itemBinding.tvNameOurTitle.text = movie.original_title
         itemBinding.rating.text = movie.vote_average
-        itemBinding.ratingBar.rating = movie.vote_average.toFloat() / 2.0f
+//        itemBinding.rat.rating = movie.vote_average.toFloat() / 2.0f
         val target = movie.poster_path
 
-        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).resize(140, 170)
-            .into(itemBinding.imgLiview)
+//        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).resize(140, 170)
+//            .into(itemBinding.imagePoster)
+
+        Picasso.get().load(Constants.API.BASE_URL_IMAGE + target).into(itemBinding.imagePoster)
 
         itemBinding.root.setOnClickListener {
             findNavController.navigate(
@@ -38,9 +41,6 @@ class MovieListViewHolder(private val itemBinding: ItemMovieBinding) :
                 parent,
                 false
             )
-
-//            val view = LayoutInflater.from(parent.context)
-//                .inflate(R.layout.item_movie, parent, false)
             return MovieListViewHolder(view)
         }
     }

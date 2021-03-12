@@ -5,6 +5,7 @@ import com.olucasmoro.movieapp.app.service.model.CallResults
 import com.olucasmoro.movieapp.feature_album.data.model.Movie
 import com.olucasmoro.movieapp.feature_album.data.model.MovieDetail
 import com.olucasmoro.movieapp.feature_album.data.model.Search
+import com.olucasmoro.movieapp.feature_album.data.model.WatchlistResponse
 
 interface AlbumRepository {
 
@@ -13,4 +14,11 @@ interface AlbumRepository {
     fun getDetailMovie(movieId: Int, apiKey: String): LiveData<CallResults<MovieDetail?>>
 
     fun searchMovie(str: String, apiKey: String): LiveData<CallResults<List<Search>?>>
+
+    fun addWatchlist(
+        accountId: Int,
+        sessionId: String,
+        apiKey: String,
+        movieId: Int
+    ): LiveData<CallResults<WatchlistResponse?>>
 }

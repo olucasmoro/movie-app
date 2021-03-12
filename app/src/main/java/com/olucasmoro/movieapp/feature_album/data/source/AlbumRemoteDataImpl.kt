@@ -52,4 +52,31 @@ class AlbumRemoteDataImpl(private val apiService: AlbumApiService) : AlbumRemote
             emit(CallResults.Error(exception = e))
         }
     }
+
+    override fun addWatchlist(
+        accountId: Int,
+        sessionId: String,
+        apiKey: String,
+        movieId: Int
+    ) = liveData {
+        try {
+            val response = apiService.addToWatchlist(
+                accountId,
+                apiKey,
+                sessionId,
+                Constants.TYPE.MOVIE,
+                movieId,
+                true
+            )
+            if (response.isSuccessful) {
+                emit(CallResults.Success(data = response.body()))
+            } else {
+                emit(CallResults.Error(exception = Exception(Constants.MESSAGE.FAILURE)))
+            }
+        } catch (e: ConnectException) {
+            emit(CallResults.Error(exception = Exception(Constants.MESSAGE.FAILURE_CONNECTION)))
+        } catch (e: Exception) {
+            emit(CallResults.Error(exception = e))
+        }
+    }
 }

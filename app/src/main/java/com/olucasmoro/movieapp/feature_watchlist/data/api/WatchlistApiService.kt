@@ -1,10 +1,9 @@
 package com.olucasmoro.movieapp.feature_watchlist.data.api
 
 import com.olucasmoro.movieapp.feature_watchlist.data.model.WatchlistResponse
+import retrofit2.Call
 import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface WatchlistApiService {
 
@@ -14,4 +13,6 @@ interface WatchlistApiService {
         @Query("api_key") key: String,
         @Query("session_id") session_id: String
     ): Response<WatchlistResponse>
+
+
 }
