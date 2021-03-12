@@ -113,8 +113,8 @@
 
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="android:numStars">5</item>
-        <item name="colorControlNormal">@color/duskYellow</item>
-        <item name="colorControlActivated">@color/duskYellow</item>
+        <item name="colorControlNormal">@color/colorSecondary</item>
+        <item name="colorControlActivated">@color/colorSecondary</item>
     </style>
 
     <style name="ContextText">

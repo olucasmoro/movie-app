@@ -5,4 +5,19 @@
     <dimen name="movie_h">180dp</dimen>
     <dimen name="nav_header_h">180dp</dimen>
     <dimen name="nav_header_mt">24dp</dimen>
+
+        <dimen name="size_32">32dp</dimen>
+        <dimen name="size_16">16dp</dimen>
+        <dimen name="size_12">12dp</dimen>
+        <dimen name="size_8">8dp</dimen>
+        <dimen name="size_4">4dp</dimen>
+
+        <dimen name="text_20">20sp</dimen>
+        <dimen name="text_18">18sp</dimen>
+        <dimen name="text_16">16sp</dimen>
+        <dimen name="text_14">14sp</dimen>
+        <dimen name="text_12">12sp</dimen>
+
+        <dimen name="corner">@dimen/size_8</dimen>
+
 </resources>
