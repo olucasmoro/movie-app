@@ -6,7 +6,6 @@ import com.olucasmoro.movieapp.feature_album.data.model.MovieDetail
 import com.olucasmoro.movieapp.app.service.model.CallResults
 import com.olucasmoro.movieapp.feature_album.domain.usecase.AlbumUseCase
 import com.olucasmoro.movieapp.app.service.utils.Constants
-import com.olucasmoro.movieapp.feature_album.data.model.WatchlistResponse
 
 class MovieDetailViewModel(private val useCase: AlbumUseCase) : ViewModel() {
 
@@ -17,7 +16,6 @@ class MovieDetailViewModel(private val useCase: AlbumUseCase) : ViewModel() {
         accountId: Int,
         sessionId: String,
         movieId: Int
-    ): LiveData<CallResults<WatchlistResponse?>> =
-        useCase.addWatchlist(accountId, sessionId, Constants.API.API_KEY, movieId)
+    ) = useCase.addWatchlist(accountId, sessionId, Constants.API.API_KEY, movieId)
 
 }

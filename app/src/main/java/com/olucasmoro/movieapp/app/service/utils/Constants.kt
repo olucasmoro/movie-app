@@ -41,14 +41,6 @@ class Constants private constructor() {
         const val NAME_DATABASE = "users"
     }
 
-    object MENU {
-        const val CHECKED_MENU = "checked_menu"
-    }
-
-    object DOTS {
-        const val POSITION_LAST_DOTS = 2
-    }
-
     object TIMER {
         const val SPLASH_TIMER: Long = 3500L
     }

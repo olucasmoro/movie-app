@@ -2,10 +2,7 @@ package com.olucasmoro.movieapp.feature_album.domain.repository
 
 import androidx.lifecycle.LiveData
 import com.olucasmoro.movieapp.app.service.model.CallResults
-import com.olucasmoro.movieapp.feature_album.data.model.Movie
-import com.olucasmoro.movieapp.feature_album.data.model.MovieDetail
-import com.olucasmoro.movieapp.feature_album.data.model.Search
-import com.olucasmoro.movieapp.feature_album.data.model.WatchlistResponse
+import com.olucasmoro.movieapp.feature_album.data.model.*
 
 interface AlbumRepository {
 
@@ -20,5 +17,5 @@ interface AlbumRepository {
         sessionId: String,
         apiKey: String,
         movieId: Int
-    ): LiveData<CallResults<WatchlistResponse?>>
+    )
 }

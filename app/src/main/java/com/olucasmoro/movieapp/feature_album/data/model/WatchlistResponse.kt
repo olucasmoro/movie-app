@@ -4,12 +4,12 @@ import com.google.gson.annotations.SerializedName
 import com.olucasmoro.movieapp.feature_watchlist.data.model.Movie
 
 data class WatchlistResponse(
-    @SerializedName("page")
-    val page: Int,
+    @SerializedName("success")
+    val success: String,
 
-    @SerializedName("total_pages")
-    val total_pages: Int,
+    @SerializedName("status_code")
+    val status_code: Int,
 
-    @SerializedName("results")
-    val results: ArrayList<Movie>
+    @SerializedName("status_message")
+    val status_message: String
 )

@@ -55,6 +55,7 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
                     is CallResults.Success -> {
                         response.data?.let { movie ->
                             updateScreen(movie)
+                            this.movieId = movie.id.toInt()
                             true
                         }
                     }
@@ -97,7 +98,10 @@ class MovieDetailFragment : Fragment(), View.OnClickListener {
                     sessionId = sessionId,
                     movieId = movieId
                 )
-                Toast.toastDisplay(requireContext(), "Add to watchlist")
+                if (!isWatchlist) {
+                    Toast.toastDisplay(requireContext(), "Add to watchlist")
+                }
+
             }
 
         }

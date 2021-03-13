@@ -33,7 +33,7 @@ class WatchListFragment : Fragment() {
         _binding = FragmentWatchlistBinding.inflate(layoutInflater)
         mSharedPreferences = SecurityPreferences(requireContext())
 
-        val userId = 10147690 //mSharedPreferences.get(Constants.AUTHENTICATION.USER_ID)
+        val userId = mSharedPreferences.get(Constants.AUTHENTICATION.USER_ID).toInt()
         val sessionId = mSharedPreferences.get(Constants.AUTHENTICATION.SESSION_ID)
 
         getWatchlist(userId, sessionId)
