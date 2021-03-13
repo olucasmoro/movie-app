@@ -82,6 +82,11 @@ Componentes:
   <img height="550" src="./images/img7.PNG">
 </p>
 
+## Para rodar o projeto no seu Android Studio
+
+1 - Crie um projeto com banco de dados no Firebase. Baixe o arquivo google-services.json deste projeto e adicione ele na pasta **movie-app/app/**
+3 - Insira sua chave da API do [The Movie DB](https://www.themoviedb.org/) no arquivo **movie-app/java/olucasmoro.movieapp/app/service/utils/Constants.kt**
+
 ## License
 ```
 MIT License

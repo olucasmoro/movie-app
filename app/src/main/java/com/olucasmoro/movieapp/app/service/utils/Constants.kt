@@ -17,7 +17,7 @@ class Constants private constructor() {
 
     object API {
         const val PAGE = "1"
-        const val API_KEY = "b64a6b336c3652edc3c1c3459e02c9e6"
+        const val API_KEY = "YOUR_API_KEY"
         const val BASE_URL = "https://api.themoviedb.org"
         const val BASE_URL_AUTHENTICATION = "https://www.themoviedb.org/authenticate/"
         const val BASE_URL_IMAGE = "https://image.tmdb.org/t/p/w342/"
