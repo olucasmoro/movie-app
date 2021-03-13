@@ -10,6 +10,16 @@ Movie App é um aplicativo simples mas que busca ser modular, escalável, susten
 
 <img src="./images/img5.png" height="300" alt="Screenshot"/><img src="./images/img4.png" height="300" alt="Screenshot"/><img src="./images/img3.png" height="300" alt="Screenshot"/><img src="./images/img1.png" height="300" alt="Screenshot"/><img src="./images/img2.png" height="300" alt="Screenshot"/>
 
+## Funcionalidades
+* [X] Login de usuário
+* [X] Cadastro de usuário
+* [X] Listagem de filmes por categoria
+* [X] Busca por filme
+* [X] Adicionar filme na Minha Lista
+* [ ] Alterar informações do usuário
+* [ ] Marcar filme como favorito
+* [ ] Criar listas diversas de filmes
+* [ ] Outras...
 
 ## Características do projeto
 
@@ -84,8 +94,8 @@ Componentes:
 
 ## Para rodar o projeto no seu Android Studio
 
-1 - Crie um projeto com banco de dados no Firebase. Baixe o arquivo google-services.json deste projeto e adicione ele na pasta **movie-app/app/**
-3 - Insira sua chave da API do [The Movie DB](https://www.themoviedb.org/) no arquivo **movie-app/java/olucasmoro.movieapp/app/service/utils/Constants.kt**
+- Crie um projeto com banco de dados no Firebase. Baixe o arquivo google-services.json deste projeto e adicione ele na pasta **movie-app/app/**
+- Insira sua chave da API do [The Movie DB](https://www.themoviedb.org/) no arquivo **movie-app/java/olucasmoro.movieapp/app/service/utils/Constants.kt**
 
 ## License
 ```
