@@ -2,7 +2,7 @@
 
 [![Kotlin Version](https://img.shields.io/badge/Kotlin-1.4-blue.svg)](https://kotlinlang.org)
 
-Movie App foi desenvolvido na intenção de praticar e demonstrar uma abordagem moderna para desenvolvimento de aplicativos Android.
+Movie App foi desenvolvido na intenção de praticar uma abordagem moderna para desenvolvimento de aplicativos Android.
 
 O objetivo deste projeto é combinar bibliotecas populares do ambiente Android e demonstrar as melhores práticas de desenvolvimento baseadas nos estudos de SOLID, Android Architecture components, App Modulaziration e Clean Architecture.
 
