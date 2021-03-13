@@ -21,18 +21,4 @@ class SecurityPreferences(context: Context) {
         return mPreferences.getString(key, "") ?: ""
     }
 
-    fun saveUser(user: User) {
-        val prefsEditor = mPreferences.edit();
-        val gson = Gson()
-        val userJson = gson.toJson(user)
-        prefsEditor.putString("User", userJson);
-        prefsEditor.apply();
-    }
-
-    fun getUser(key: String): User {
-        val gson = Gson()
-        val json: String? = mPreferences.getString(key, "")
-        return gson.fromJson(json, User::class.java)
-    }
-
 }

@@ -1,11 +1,13 @@
 package com.olucasmoro.movieapp.feature_user.presentation.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.olucasmoro.movieapp.MainActivity
 import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.databinding.FragmentUserLoginBinding
 import com.olucasmoro.movieapp.app.service.utils.Constants
@@ -14,12 +16,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : Fragment(), View.OnClickListener {
 
-    private lateinit var mSharedPreferences: SecurityPreferences
-
     private val viewModel: LoginViewModel by viewModel()
-//    private val binding by lazy {
-//        FragmentUserLoginBinding.inflate(layoutInflater)
-//    }
 
     private var _binding: FragmentUserLoginBinding? = null
     private val binding get() = _binding!!
@@ -31,17 +28,10 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
         _binding = FragmentUserLoginBinding.inflate(layoutInflater)
 
-        mSharedPreferences = SecurityPreferences(requireContext())
-
         setListeners()
 
         return binding.root
     }
-
-//    override fun onStart() {
-//        setListeners()
-//        super.onStart()
-//    }
 
     override fun onClick(view: View) {
         when (view) {
@@ -50,13 +40,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    /**
-     * Inicializa os eventos de click
-     */
     private fun setListeners() {
         binding.buttonLoginBtnLogin.setOnClickListener(this)
         binding.tvNewUser.setOnClickListener(this)
-        binding.tvForgetPassword.setOnClickListener(this)
     }
 
     private fun verifyUser() {
@@ -71,7 +57,14 @@ class LoginFragment : Fragment(), View.OnClickListener {
                     Toast.toastDisplay(requireContext(), "Error!")
                 }
                 Constants.FIREBASE.SUCCESS -> {
-                    // Salvar usuário no Cache
+                    val user = viewModel.getUserFirebase(username)
+                    viewModel.store(Constants.AUTHENTICATION.NAME, user.name)
+                    viewModel.store(Constants.AUTHENTICATION.EMAIL, user.email)
+                    viewModel.store(Constants.AUTHENTICATION.PASSWORD, user.password)
+                    viewModel.store(Constants.AUTHENTICATION.SESSION_ID, user.sessionId.toString())
+                    viewModel.store(Constants.AUTHENTICATION.USERNAME, user.username)
+
+                    startActivity(Intent(requireContext(), MainActivity::class.java))
                 }
                 Constants.FIREBASE.USER_NOT_FOUND -> {
                     binding.loginUsername.requestFocus()
@@ -80,6 +73,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
                     binding.loginPassword.requestFocus()
                 }
             }
+        } else {
+            Toast.toastDisplay(requireContext(), "Empty fields ")
         }
     }
 

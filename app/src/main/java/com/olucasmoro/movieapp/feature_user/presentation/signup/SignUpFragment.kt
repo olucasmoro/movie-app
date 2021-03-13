@@ -3,6 +3,7 @@ package com.olucasmoro.movieapp.feature_user.presentation.signup
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,16 +14,17 @@ import com.olucasmoro.movieapp.app.service.model.CallResults
 import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
 import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
+import com.olucasmoro.movieapp.feature_user.data.local.User
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SignUpFragment : Fragment(), View.OnClickListener {
-
-    private lateinit var mSharedPreferences: SecurityPreferences
 
     private val viewModel: SignUpViewModel by viewModel()
 
     private var _binding: FragmentUserSignUpBinding? = null
     private val binding get() = _binding!!
+
+    lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +33,6 @@ class SignUpFragment : Fragment(), View.OnClickListener {
         _binding = FragmentUserSignUpBinding.inflate(layoutInflater)
 
         setListeners()
-
-        mSharedPreferences = SecurityPreferences(requireContext())
 
         return binding.root
     }
@@ -50,15 +50,12 @@ class SignUpFragment : Fragment(), View.OnClickListener {
             binding.signUpEmail.editText?.text.toString() != "" &&
             binding.signUpPassword.editText?.text.toString() != ""
         ) {
-            val email = binding.signUpEmail.editText?.text.toString()
-            val password = binding.signUpPassword.editText?.text.toString()
             val username = binding.signUpUsername.editText?.text.toString()
-            val name = binding.signUpName.editText?.text.toString()
 
-            mSharedPreferences.store(Constants.AUTHENTICATION.EMAIL, email)
-            mSharedPreferences.store(Constants.AUTHENTICATION.USERNAME, username)
-            mSharedPreferences.store(Constants.AUTHENTICATION.NAME, name)
-            mSharedPreferences.store(Constants.AUTHENTICATION.PASSWORD, password)
+            val user = User(username)
+            user.email = binding.signUpEmail.editText?.text.toString()
+            user.password = binding.signUpPassword.editText?.text.toString()
+            user.name = binding.signUpName.editText?.text.toString()
 
             createToken()
         } else {
@@ -83,10 +80,8 @@ class SignUpFragment : Fragment(), View.OnClickListener {
                     }
                     is CallResults.Success -> {
                         response.data?.let { user ->
-                            mSharedPreferences.store(
-                                Constants.AUTHENTICATION.TOKEN,
-                                user.request_token
-                            )
+                            viewModel.store(Constants.AUTHENTICATION.TOKEN, user.request_token)
+                            Log.i("SignUpFragment", user.request_token)
                             validateToken(user.request_token)
                             true
                         }

@@ -11,13 +11,10 @@ import com.olucasmoro.movieapp.databinding.FragmentCheckValidationBinding
 import com.olucasmoro.movieapp.app.service.model.CallResults
 import com.olucasmoro.movieapp.app.service.utils.Toast
 import com.olucasmoro.movieapp.app.service.utils.Constants
-import com.olucasmoro.movieapp.feature_user.data.local.SecurityPreferences
+import com.olucasmoro.movieapp.feature_user.data.local.User
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class CheckValidationFragment : Fragment(), View.OnClickListener {
-
-    private lateinit var mSharedPreferences: SecurityPreferences
 
     private val viewModel: CheckValidationViewModel by viewModel()
     private val binding by lazy {
@@ -37,7 +34,7 @@ class CheckValidationFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             binding.btnClick -> {
-                val token = mSharedPreferences.get(Constants.AUTHENTICATION.TOKEN)
+                val token = viewModel.get(Constants.AUTHENTICATION.TOKEN)
                 createSession(token)
             }
         }
@@ -55,11 +52,20 @@ class CheckValidationFragment : Fragment(), View.OnClickListener {
                     }
                     is CallResults.Success -> {
                         response.data?.let { data ->
-                            val mSharedPreferences = SecurityPreferences(requireContext())
-                            mSharedPreferences.store(
-                                Constants.AUTHENTICATION.SESSION_ID, data.session_id
+
+                            val name = viewModel.get(Constants.AUTHENTICATION.NAME)
+                            val username = viewModel.get(Constants.AUTHENTICATION.USERNAME)
+                            val email = viewModel.get(Constants.AUTHENTICATION.EMAIL)
+                            val password = viewModel.get(Constants.AUTHENTICATION.PASSWORD)
+                            viewModel.store(Constants.AUTHENTICATION.SESSION_ID, data.session_id)
+
+                            viewModel.saveUserFirebase(
+                                username = username,
+                                name = name,
+                                email = email,
+                                password = password,
+                                session_id = data.session_id
                             )
-                            saveUser(data.session_id)
                             startActivity(Intent(requireContext(), MainActivity::class.java))
                             true
                         }
@@ -67,18 +73,6 @@ class CheckValidationFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
-    }
-
-    private fun saveUser(sessionId: String) {
-        val username = mSharedPreferences.get(Constants.AUTHENTICATION.USERNAME)
-        val name = mSharedPreferences.get(Constants.AUTHENTICATION.NAME)
-        val email = mSharedPreferences.get(Constants.AUTHENTICATION.EMAIL)
-        val password = mSharedPreferences.get(Constants.AUTHENTICATION.PASSWORD)
-
-        viewModel.saveUserFirebase(
-            username = username, name = name, email = email, password = password,
-            session_id = sessionId
-        )
     }
 
 }

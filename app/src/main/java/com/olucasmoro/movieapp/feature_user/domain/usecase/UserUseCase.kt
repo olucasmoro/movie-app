@@ -2,6 +2,7 @@ package com.olucasmoro.movieapp.feature_user.domain.usecase
 
 import androidx.lifecycle.LiveData
 import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.feature_user.data.local.User
 import com.olucasmoro.movieapp.feature_user.data.model.SessionResponse
 import com.olucasmoro.movieapp.feature_user.data.model.TokenResponse
 import com.olucasmoro.movieapp.feature_user.domain.repository.UserRepository
@@ -28,4 +29,11 @@ class UserUseCase(
 
     fun checkUserFirebase(username: String, password: String): Int =
         repository.checkUserFirebase(username, password)
+
+    fun getUserFirebase(username: String): User = repository.getUserFirebase(username)
+
+    fun store(key: String, value: String) = repository.store(key, value)
+
+    fun get(key: String): String = repository.get(key)
+
 }

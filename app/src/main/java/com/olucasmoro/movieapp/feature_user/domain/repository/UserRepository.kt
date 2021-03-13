@@ -2,6 +2,7 @@ package com.olucasmoro.movieapp.feature_user.domain.repository
 
 import androidx.lifecycle.LiveData
 import com.olucasmoro.movieapp.app.service.model.CallResults
+import com.olucasmoro.movieapp.feature_user.data.local.User
 import com.olucasmoro.movieapp.feature_user.data.model.SessionResponse
 import com.olucasmoro.movieapp.feature_user.data.model.TokenResponse
 
@@ -20,4 +21,11 @@ interface UserRepository {
     )
 
     fun checkUserFirebase(username: String, password: String): Int
+
+    fun getUserFirebase(username: String): User
+
+    fun store(key: String, value: String)
+
+    fun get(key: String): String
+
 }

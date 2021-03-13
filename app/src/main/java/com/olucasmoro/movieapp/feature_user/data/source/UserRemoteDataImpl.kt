@@ -51,7 +51,12 @@ class UserRemoteDataImpl(private val apiService: UserApiService) : UserRemoteDat
         password: String,
         session_id: String
     ) {
-        val user = User(username, name, email, password, session_id)
+        val user = User(username)
+        user.email = email
+        user.name = name
+        user.password = password
+        user.sessionId = session_id.toInt()
+
         val rootNode: FirebaseDatabase = FirebaseDatabase.getInstance()
         val referenceFirebase: DatabaseReference = rootNode.getReference("users")
         referenceFirebase.child(username).setValue(user)
@@ -71,7 +76,7 @@ class UserRemoteDataImpl(private val apiService: UserApiService) : UserRemoteDat
                         dataSnapshot.child(username).child(Constants.AUTHENTICATION.PASSWORD)
                             .getValue(
                                 String::class.java
-                            )
+                            ).toString()
                     if (passwordFromDB == password) {
                         Constants.FIREBASE.SUCCESS
                     } else {
@@ -86,5 +91,37 @@ class UserRemoteDataImpl(private val apiService: UserApiService) : UserRemoteDat
         })
 
         return response
+    }
+
+    override fun getUserFirebase(username: String): User {
+        val reference =
+            FirebaseDatabase.getInstance().getReference(Constants.FIREBASE.NAME_DATABASE)
+        val checkUser = reference.orderByChild(Constants.AUTHENTICATION.USERNAME).equalTo(username)
+
+        lateinit var user: User
+
+        checkUser.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    val name = dataSnapshot.child(username).child(Constants.AUTHENTICATION.NAME)
+                        .getValue(String::class.java)
+                    val email = dataSnapshot.child(username).child(Constants.AUTHENTICATION.EMAIL)
+                        .getValue(String::class.java)
+                    val sessionId =
+                        dataSnapshot.child(username).child(Constants.AUTHENTICATION.SESSION_ID)
+                            .getValue(String::class.java)
+
+                    user = User(username)
+                    user.name = name!!
+                    user.email = email!!
+                    user.sessionId = sessionId!!.toInt()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        })
+        return user
     }
 }

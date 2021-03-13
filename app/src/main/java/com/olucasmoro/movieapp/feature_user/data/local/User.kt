@@ -1,11 +1,11 @@
 package com.olucasmoro.movieapp.feature_user.data.local
 
 data class User(
-    val username: String,
-    val name: String,
-    val email: String,
-    val password: String,
-    val session_id: String
+    val username: String
 ) {
-    val id: Int? = null
+    var name: String = ""
+    var email: String = ""
+    var password: String = ""
+    var sessionId: Int? = null
+    var id: Int? = null
 }

@@ -23,4 +23,8 @@ class CheckValidationViewModel(
     ) =
         useCase.saveUserFirebase(username, name, email, password, session_id)
 
+    fun get(key: String): String = useCase.get(key)
+
+    fun store(key: String, value: String) = useCase.store(key, value)
+
 }
