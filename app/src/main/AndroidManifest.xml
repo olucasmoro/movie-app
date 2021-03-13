@@ -18,13 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppMovieKotlin"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m">
+        tools:targetApi="m"
+        android:fullBackupContent="true">
         <activity
             android:name=".app.InitialActivity"
-            android:label="" />
-        <activity
-            android:name=".app.view.splashscreen.SplashScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

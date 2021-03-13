@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs.kotlin"
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -101,7 +102,6 @@ dependencies {
     implementation "org.koin:koin-androidx-compose:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
 
-    // Firebase
     implementation platform("com.google.firebase:firebase-bom:$firebaseBom")
     implementation "com.google.firebase:firebase-database:$firebaseDB"
     implementation 'com.google.firebase:firebase-auth-ktx'
