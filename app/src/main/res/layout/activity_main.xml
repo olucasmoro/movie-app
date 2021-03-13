@@ -4,7 +4,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!-- android:paddingTop="?attr/actionBarSize"-->
 
     <fragment
         android:id="@+id/nav_host_fragment"
@@ -24,17 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        app:itemRippleColor="@color/colorIcon"
-        app:itemIconTint="@color/White_75"
-        app:itemTextColor="@color/White_75"
         android:background="@color/colorPrimary"
+        app:itemIconTint="@color/White_75"
+        app:itemRippleColor="@color/colorIcon"
+        app:itemTextColor="@color/White_75"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    app:itemIconTint="@color/colorIcon"-->
-<!--    app:itemRippleColor="@color/white"-->
-<!--    app:itemTextColor="@color/white"-->

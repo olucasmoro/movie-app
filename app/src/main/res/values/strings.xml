@@ -16,19 +16,9 @@
     <string name="transition_button_main">button_main</string>
     <string name="transition_login_sign_up">button_login_sign_up</string>
     <string name="image">image</string>
-    <string name="skip">SKIP</string>
     <string name="lets_get_started">Lets Get Started</string>
     <string name="app_slogan">Millions of Movies, Series and People to Discover. Explore now.</string>
     <string name="welcome">Welcome</string>
-
-    <!-- Slides -->
-    <string name="title_app">App Movie</string>
-    <string name="slide_title_1">The Movie</string>
-    <string name="slide_title_2">Movies</string>
-    <string name="slide_title_3">Series</string>
-    <string name="slide_desc_1">Millions of Movies, Series and People to Discover. Explore now.</string>
-    <string name="slide_desc_2">The Newest and best movies.</string>
-    <string name="slide_desc_3">The newest and best series.</string>
 
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -92,6 +82,6 @@
     <string name="movie">movie</string>
     <string name="title_featured_moviealbum">Movie Album</string>
     <string name="title_mylist">Module Title</string>
-
+    <string name="get_in">Get in</string>
 
 </resources>

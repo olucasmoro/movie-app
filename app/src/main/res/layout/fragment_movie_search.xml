@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature_album.presentation.moviesearch.MovieSearchViewModel"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".feature_album.presentation.moviesearch.MovieSearchViewModel">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,13 +36,13 @@
             app:srcCompat="@drawable/ic_search1" />
 
         <ImageView
-            android:background="@color/transparent"
             android:id="@+id/clear_search"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
             android:contentDescription="@string/search"
             android:visibility="visible"
             app:srcCompat="@drawable/if_icon_close" />
@@ -57,4 +57,8 @@
         android:paddingStart="@dimen/_8sdp"
         tools:ignore="RtlSymmetry" />
 
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cam" />
 </LinearLayout>
