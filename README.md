@@ -25,25 +25,27 @@ Movie App é um aplicativo simples mas que busca ser modular, escalável, susten
 
 <img src="./images/gif.gif" width="336" align="right" hspace="20">
 
+* API
+    * [The Movie DB](https://developers.themoviedb.org/3)
+    * [Firebase](https://firebase.google.com/?hl=pt-br)
 * Tech-stack
     * [Retrofit](https://square.github.io/retrofit/) - networking
     * [Jetpack](https://developer.android.com/jetpack)
-        * [Navigation](https://developer.android.com/topic/libraries/architecture/navigation/) - in-app navigation
-        * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - notify views about database change
-        * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - perform an action when lifecycle state changes
-        * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - store and manage UI-related data in a lifecycle conscious way
-        * [Room](https://developer.android.com/jetpack/androidx/releases/room) - store offline cache
-    * [Kodein](https://kodein.org/Kodein-DI/) - dependency injection
+        * [Navigation](https://developer.android.com/topic/libraries/architecture/navigation/)
+        * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) 
+        * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) 
+        * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) 
+        * [Room](https://developer.android.com/jetpack/androidx/releases/room)
+    * [Kodein](https://kodein.org/Kodein-DI/)
     * [Picasso](https://square.github.io/picasso/)
 * Modern Architecture
-    * Clean Architecture (at feature module level)
-    * Single activity architecture ( with[Navigation component](https://developer.android.com/guide/navigation/navigation-getting-started))
+    * Clean Architecture
     * MVVM
     * [Android Architecture components](https://developer.android.com/topic/libraries/architecture) 
       * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) 
       * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) 
       * [Navigation](https://developer.android.com/jetpack/androidx/releases/navigation)
-      * [Android KTX](https://developer.android.com/kotlin/ktx) - Jetpack Kotlin extensions
+      * [Android KTX](https://developer.android.com/kotlin/ktx)
 * UI
     * [Material design](https://material.io/design)
     * Reactive UI
